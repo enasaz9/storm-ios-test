@@ -1,0 +1,6 @@
+framework module Pods_TakeHomeAppTests {
+  umbrella header "Pods-TakeHomeAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
