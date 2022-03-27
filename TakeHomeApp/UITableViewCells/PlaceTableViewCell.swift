@@ -31,6 +31,7 @@ class PlaceTableViewCell: UITableViewCell {
         self.contentView.addSubview(thumbnailImageView)
         self.contentView.addSubview(nameLabel)
         self.contentView.backgroundColor = .white
+        
         thumbnailImageView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
         thumbnailImageView.leadingAnchor.constraint(equalTo:self.contentView.leadingAnchor, constant:10).isActive = true
         thumbnailImageView.widthAnchor.constraint(equalToConstant:70).isActive = true

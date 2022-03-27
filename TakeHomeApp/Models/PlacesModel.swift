@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+class PlacesModel: Codable {
+    
+    var id: String
+    var createdAt: String
+    var name: String
+    var thumbnail: String
+
+}
