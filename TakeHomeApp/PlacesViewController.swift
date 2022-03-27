@@ -15,14 +15,13 @@ class PlacesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .red
         initialSetup()
-        setUpNavigation()
         getPlaces()
     }
     
     func initialSetup() {
-        
+        navigationItem.title = "Places"
+
         view.addSubview(placesTableView)
         
         placesTableView.dataSource = self
@@ -36,14 +35,10 @@ class PlacesViewController: UIViewController {
         activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
-    func setUpNavigation() {
-        navigationItem.title = "Places"
-    }
-    
     func getPlaces() {
         let placesViewModel = PlacesViewModel()
-        
         activityIndicator.startAnimating()
+        
         placesViewModel.getPlaces { response in
             self.activityIndicator.stopAnimating()
             
@@ -79,6 +74,13 @@ extension PlacesViewController: UITableViewDelegate, UITableViewDataSource {
         cell.thumbnailImageView.sd_setImage(with: URL.init(string: placesList[indexPath.row].thumbnail), completed: nil)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let photosVC = PhotosViewController()
+        photosVC.selectedPlace = placesList[indexPath.row]
+        
+        self.navigationController?.pushViewController(photosVC, animated: true)
     }
     
     
