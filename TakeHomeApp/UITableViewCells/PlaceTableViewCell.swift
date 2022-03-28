@@ -28,21 +28,31 @@ class PlaceTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupViews()
+        setupLayouts()
+    }
+    
+    func setupViews() {
         self.contentView.addSubview(thumbnailImageView)
         self.contentView.addSubview(nameLabel)
-        self.contentView.backgroundColor = .white
+    }
+    
+    // Handling the layout constraints of the TableView cell outlets
+    func setupLayouts() {
         
-        thumbnailImageView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
-        thumbnailImageView.leadingAnchor.constraint(equalTo:self.contentView.leadingAnchor, constant:10).isActive = true
-        thumbnailImageView.widthAnchor.constraint(equalToConstant:70).isActive = true
-        thumbnailImageView.heightAnchor.constraint(equalToConstant:70).isActive = true
+        NSLayoutConstraint.activate([
+            thumbnailImageView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor),
+            thumbnailImageView.leadingAnchor.constraint(equalTo:self.contentView.leadingAnchor, constant:10),
+            thumbnailImageView.widthAnchor.constraint(equalToConstant:70),
+            thumbnailImageView.heightAnchor.constraint(equalToConstant:70)
+        ])
         
-        
-        nameLabel.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
-        nameLabel.leadingAnchor.constraint(equalTo:self.thumbnailImageView.trailingAnchor, constant:10).isActive = true
-        nameLabel.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:-10).isActive = true
-        nameLabel.heightAnchor.constraint(equalToConstant:40).isActive = true
-                
+        NSLayoutConstraint.activate([
+            nameLabel.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor),
+            nameLabel.leadingAnchor.constraint(equalTo:self.thumbnailImageView.trailingAnchor, constant:10),
+            nameLabel.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:-10),
+            nameLabel.heightAnchor.constraint(equalToConstant:40)
+        ])
     }
     
     required init?(coder aDecoder: NSCoder) {

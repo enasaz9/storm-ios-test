@@ -10,6 +10,7 @@ import Alamofire
 
 class PlacesViewModel {
     
+    // I prefer using Alamofire to handle errors with validate. It also provides high quality, elegant code and easy to deal with.
     func getPlaces(completionResult:@escaping ((([PlacesModel]?) -> Void))) -> Void {
         AF.request("https://608948878c8043001757e68c.mockapi.io/api/v1/places")
             .validate()

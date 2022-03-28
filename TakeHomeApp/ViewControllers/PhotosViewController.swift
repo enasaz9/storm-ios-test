@@ -23,7 +23,8 @@ class PhotosViewController: UIViewController {
     
     var activityIndicator: UIActivityIndicatorView!
 
-    let spacing: CGFloat = 16.0
+    let spacing: CGFloat = 16.0  // collectionView's cells spacing constant
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +44,9 @@ class PhotosViewController: UIViewController {
         collectionView.delegate = self
         collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "PhotoCollectionViewCell")
         
-        activityIndicator = UIActivityIndicatorView(style: .large)
+        // Adding activity indicator and its layout constraint
 
+        activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(activityIndicator)
         activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -63,6 +65,7 @@ class PhotosViewController: UIViewController {
         ])
     }
     
+    // API call tp get the photos of the selected place
     func getPlacePhotos() {
         let viewModel = PhotosViewModel()
         activityIndicator.startAnimating()
@@ -75,7 +78,15 @@ class PhotosViewController: UIViewController {
                 self.collectionView.reloadData()
                 
             } else {
-                print("error or empty")
+                var msg = "There's no photos in this place, please try again later!"
+                
+                if response == nil {
+                    msg = "Error in server, please try again later!"
+                }
+                
+                let alert = UIAlertController(title: "Alert", message: msg, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }
@@ -92,6 +103,8 @@ extension PhotosViewController: UICollectionViewDataSource {
 
         let photo = photos[indexPath.row]
         cell.createdAtLabel.text = photo.createdAt.dateToFormattedString()
+        
+        // Using SDWebImage to fix the cashing issue with every relaod
         cell.photoImageView.sd_setImage(with: URL.init(string: photo.image), completed: nil)
         return cell
     }

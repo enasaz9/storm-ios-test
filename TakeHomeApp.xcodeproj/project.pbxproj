@@ -16,6 +16,7 @@
 		9E06CEF927F098F70060529B /* PhotosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E06CEF827F098F70060529B /* PhotosModel.swift */; };
 		9E06CEFB27F09B730060529B /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E06CEFA27F09B730060529B /* PhotosViewController.swift */; };
 		9E06CEFE27F09D4A0060529B /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E06CEFD27F09D4A0060529B /* PhotoCollectionViewCell.swift */; };
+		9E06CF0227F131230060529B /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E06CF0127F131230060529B /* StringExtension.swift */; };
 		AF8DA7D02639E4AB0011F652 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DA7CF2639E4AB0011F652 /* AppDelegate.swift */; };
 		AF8DA7D42639E4AB0011F652 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DA7D32639E4AB0011F652 /* PlacesViewController.swift */; };
 		AF8DA7D92639E4AE0011F652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF8DA7D82639E4AE0011F652 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		9E06CEF827F098F70060529B /* PhotosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosModel.swift; sourceTree = "<group>"; };
 		9E06CEFA27F09B730060529B /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		9E06CEFD27F09D4A0060529B /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		9E06CF0127F131230060529B /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		AF8DA7CC2639E4AB0011F652 /* TakeHomeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeHomeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF8DA7CF2639E4AB0011F652 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF8DA7D32639E4AB0011F652 /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,23 @@
 			path = UICollectionViewCells;
 			sourceTree = "<group>";
 		};
+		9E06CEFF27F130F70060529B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9E06CEFA27F09B730060529B /* PhotosViewController.swift */,
+				AF8DA7D32639E4AB0011F652 /* PlacesViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9E06CF0027F1310D0060529B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9E06CF0127F131230060529B /* StringExtension.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		AF8DA7C32639E4AB0011F652 = {
 			isa = PBXGroup;
 			children = (
@@ -186,13 +205,13 @@
 		AF8DA7CE2639E4AB0011F652 /* TakeHomeApp */ = {
 			isa = PBXGroup;
 			children = (
+				9E06CF0027F1310D0060529B /* Helper */,
+				9E06CEFF27F130F70060529B /* ViewControllers */,
+				9E06CEF027F0768A0060529B /* UITableViewCells */,
 				9E06CEFC27F09C090060529B /* UICollectionViewCells */,
 				9E06CEF327F087DD0060529B /* ViewModel */,
-				9E06CEF027F0768A0060529B /* UITableViewCells */,
 				9E06CEED27F074CC0060529B /* Models */,
 				AF8DA7CF2639E4AB0011F652 /* AppDelegate.swift */,
-				AF8DA7D32639E4AB0011F652 /* PlacesViewController.swift */,
-				9E06CEFA27F09B730060529B /* PhotosViewController.swift */,
 				AF8DA7D82639E4AE0011F652 /* Assets.xcassets */,
 				AF8DA7DA2639E4AE0011F652 /* LaunchScreen.storyboard */,
 				AF8DA7DD2639E4AE0011F652 /* Info.plist */,
@@ -458,6 +477,7 @@
 			files = (
 				9E06CEF927F098F70060529B /* PhotosModel.swift in Sources */,
 				9E06CEFB27F09B730060529B /* PhotosViewController.swift in Sources */,
+				9E06CF0227F131230060529B /* StringExtension.swift in Sources */,
 				9E06CEF527F087F80060529B /* PlacesViewModel.swift in Sources */,
 				AF8DA7D42639E4AB0011F652 /* PlacesViewController.swift in Sources */,
 				AF8DA7D02639E4AB0011F652 /* AppDelegate.swift in Sources */,
